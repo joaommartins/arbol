@@ -30,6 +30,8 @@ jobs:
 
   clippy-fmt-and-test:
     runs-on: ubuntu-latest
+    needs:
+      - check-version
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -57,7 +59,9 @@ jobs:
         run: cargo nextest run
 
   build-release-binary:
-    needs: check-version
+    needs:
+      - check-version
+      - clippy-fmt-and-test
     if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     steps:
