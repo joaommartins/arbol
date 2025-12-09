@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "schedule": ["after 8am and before 9am every weekday"],
   "prConcurrentLimit": 1,
   "prHourlyLimit": 1,
   "packageRules": [

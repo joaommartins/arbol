@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
   schedule:
-    # Runs every day at 2:00 AM UTC
-    - cron: "0 2 * * *"
+    # Runs every day at 8:00 AM Sydney time (9:00 PM UTC previous day)
+    - cron: "0 21 * * *"
 
 name: Renovate
 
