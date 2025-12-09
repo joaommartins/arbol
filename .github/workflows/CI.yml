@@ -18,13 +18,13 @@ jobs:
       version_changed: ${{ steps.version-check.outputs.version-changed }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
 
       - name: Check if version changed
         id: version-check
-        uses: joaommartins/cargo-version-check-action@v1
+        uses: joaommartins/cargo-version-check-action@6a8e9d67603e5dec028b42df62f2028078970611 # v1
         with:
           base-ref: ${{ github.base_ref }}
 
@@ -34,7 +34,7 @@ jobs:
       - check-version
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
@@ -42,10 +42,10 @@ jobs:
           components: clippy, rustfmt
 
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@v2
+        uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2
 
       - name: Install cargo-nextest
-        uses: taiki-e/install-action@v2
+        uses: taiki-e/install-action@cf46383a970594553a83cc6140075ef6a7f54dee # v2
         with:
           tool: nextest
 
@@ -66,13 +66,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@v2
+        uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2
 
       - name: Build release binary
         run: cargo build --release --locked
