@@ -56,7 +56,7 @@ jobs:
             ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.toml') }}
 
       - name: Install cargo-aur
-        uses: taiki-e/install-action@cede0bb282aae847dfa8aacca3a41c86d973d4d7 # v2
+        uses: taiki-e/install-action@71b48393496777ee11188c07a34d48b048a985cd # v2
         with:
           tool: cargo-aur
 
