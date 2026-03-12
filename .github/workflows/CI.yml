@@ -42,10 +42,10 @@ jobs:
           components: clippy, rustfmt
 
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2
+        uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
 
       - name: Install cargo-nextest
-        uses: taiki-e/install-action@385db9cc6bf65d19775b02084a4b698eaca9a4f2 # v2
+        uses: taiki-e/install-action@5ab5d1729c22acd8f798b267eadcfe5e5be6f5c2 # v2
         with:
           tool: nextest
 
@@ -72,7 +72,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2
+        uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
 
       - name: Build release binary
         run: cargo build --release --locked
