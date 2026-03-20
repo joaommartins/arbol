@@ -45,7 +45,7 @@ jobs:
           override: true
 
       - name: Cache cargo registry and build
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ~/.cargo/registry
@@ -56,7 +56,7 @@ jobs:
             ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.toml') }}
 
       - name: Install cargo-aur
-        uses: taiki-e/install-action@f916cfac5d8efd040e250d0cd6b967616504b3a4 # v2
+        uses: taiki-e/install-action@a7e592b24782184db1613493a5e65d2e12199f80 # v2
         with:
           tool: cargo-aur
 
@@ -92,7 +92,7 @@ jobs:
           path: target/release
 
       - name: Create Release and Upload Assets
-        uses: softprops/action-gh-release@b25b93d384199fc0fc8c2e126b2d937a0cbeb2ae # v2
+        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2
         with:
           tag_name: v${{ needs.check-version.outputs.current_version }}
           name: v${{ needs.check-version.outputs.current_version }}
@@ -118,7 +118,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@631a55b12751854ce901bb631d5902ceb48146f7 # stable
 
       - name: Publish to crates.io
         run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }} || true
