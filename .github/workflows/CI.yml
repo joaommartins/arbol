@@ -45,7 +45,7 @@ jobs:
         uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
 
       - name: Install cargo-nextest
-        uses: taiki-e/install-action@ec28e287910af896fd98e04056d31fa68607e7ad # v2
+        uses: taiki-e/install-action@3771e22aa892e03fd35585fae288baad1755695c # v2
         with:
           tool: nextest
 
